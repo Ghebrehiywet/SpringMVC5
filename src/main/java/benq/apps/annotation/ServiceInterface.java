@@ -1,4 +1,4 @@
-package benq.apps.annotaion;
+package benq.apps.annotation;
 
 public interface ServiceInterface {
     void display();

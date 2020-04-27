@@ -1,4 +1,4 @@
-package benq.apps.annotaion;
+package benq.apps.annotation;
 
 import org.springframework.stereotype.Service;
 
