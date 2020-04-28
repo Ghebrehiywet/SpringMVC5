@@ -4,6 +4,15 @@ public class Address {
     private  String street;
     private  String zipCode;
 
+    //@ModelAttribute works with default constructor
+    public Address() {
+    }
+
+    public Address(String street, String zipCode) {
+        this.street = street;
+        this.zipCode = zipCode;
+    }
+
     public String getStreet() {
         return street;
     }

@@ -2,15 +2,17 @@ package benq.apps.databinding;
 
 public class UserModel {
     private String id;
-    private  String name;
-private  Address address;
+    private String name;
+    private Address address = new Address("", "");
 
+    //@ModelAttribute works with default constructor
     public UserModel() {
     }
 
-    public UserModel(String id, String name) {
+    public UserModel(String id, String name, Address address) {
         this.id = id;
         this.name = name;
+        this.address = address;
     }
 
     public Address getAddress() {

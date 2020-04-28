@@ -25,15 +25,16 @@ public class UserController {
     }
 
     @PostMapping("/signup")
-    public String createUser(UserModel userModel) {
+    public String createUser(@ModelAttribute("ModelMethod") UserModel mod2, UserModel userModel) {
 
         System.out.println(userModel);
+        System.out.println(mod2);
         return "signup";
     }
 
     @ModelAttribute("ModelMethod")
     public UserModel ModelMethod() {
-        UserModel userModel = new UserModel("1223", "Name");
+        UserModel userModel = new UserModel("1223", "Name", new Address("Fairfield", "5762374"));
         System.out.println("Model Method:" + userModel);
         return userModel;
     }
