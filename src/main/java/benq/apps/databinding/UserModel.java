@@ -3,24 +3,11 @@ package benq.apps.databinding;
 public class UserModel {
     private String id;
     private String name;
-    private Address address = new Address("", "");
+    private Address address;
+    //private PhoneNumber phoneNumber;
 
     //@ModelAttribute works with default constructor
     public UserModel() {
-    }
-
-    public UserModel(String id, String name, Address address) {
-        this.id = id;
-        this.name = name;
-        this.address = address;
-    }
-
-    public Address getAddress() {
-        return address;
-    }
-
-    public void setAddress(Address address) {
-        this.address = address;
     }
 
     public String getId() {
@@ -39,12 +26,29 @@ public class UserModel {
         this.name = name;
     }
 
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+//    public PhoneNumber getPhoneNumber() {
+//        return phoneNumber;
+//    }
+//
+//    public void setPhoneNumber(PhoneNumber phoneNumber) {
+//        this.phoneNumber = phoneNumber;
+//    }
+
     @Override
     public String toString() {
         return "UserModel{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", address=" + address +
+//                ", phoneNumber=" + phoneNumber +
                 '}';
     }
 }

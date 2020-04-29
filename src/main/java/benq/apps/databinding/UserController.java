@@ -25,16 +25,35 @@ public class UserController {
     }
 
     @PostMapping("/signup")
-    public String createUser(@ModelAttribute("ModelMethod") UserModel mod2, UserModel userModel) {
+    public String createUser(Model mod, UserModel userModel) {
 
         System.out.println(userModel);
-        System.out.println(mod2);
-        return "signup";
+        System.out.println(mod);
+        return "userDetail";
+    }
+
+    @GetMapping("/signup2")
+    public String createUser2() {
+        return "signup2";
+    }
+
+    /**
+     * Data binding is done by framework for primitive and string data types
+     * but data formatter is done for phone reference object
+     *
+     * @param userModel
+     * @return
+     */
+    @PostMapping("/signup2")
+    public String createUser2(UserModel userModel) {
+
+        System.out.println(userModel);
+        return "userDetail2";
     }
 
     @ModelAttribute("ModelMethod")
     public UserModel ModelMethod() {
-        UserModel userModel = new UserModel("1223", "Name", new Address("Fairfield", "5762374"));
+        UserModel userModel = new UserModel();
         System.out.println("Model Method:" + userModel);
         return userModel;
     }

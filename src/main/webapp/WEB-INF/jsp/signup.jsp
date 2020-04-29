@@ -15,7 +15,8 @@
 <form action="signup" method="post">
     <p>User ID: <input name="id" placeholder="Enter ID" value="${ModelMethod.id}"></p>
     <p>User Name: <input name="name" placeholder="Enter Name" value="${ModelMethod.name}"></p>
-    <p>Street Address: <input name="address.street" placeholder="Enter Street Address" value="${ModelMethod.address.street}"></p>
+<%--    <p>Phone number: <input name="phoneNumber" placeholder="xxxxx-xxxxx" value=""></p>--%>
+    <p>Street Address: <input name="address.street" placeholder="Enter Street" value="${ModelMethod.address.street}"></p>
     <p>ZipCode Address: <input name="address.zipCode" placeholder="Enter Zip Code" value="${ModelMethod.address.zipCode}"></p>
     <input type="submit">
 </form>

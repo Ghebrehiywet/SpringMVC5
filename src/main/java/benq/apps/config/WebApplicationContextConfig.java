@@ -1,8 +1,10 @@
 package benq.apps.config;
 
+import benq.apps.formatter.PhoneFormatter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.format.FormatterRegistry;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -25,5 +27,11 @@ public class WebApplicationContextConfig implements WebMvcConfigurer {
         resolver.setPrefix("/WEB-INF/jsp");
         resolver.setSuffix(".jsp");
         return resolver;
+    }
+
+    //  Formatter is added on the configuration
+    @Override
+    public void addFormatters(FormatterRegistry registry) {
+        registry.addFormatter(new PhoneFormatter());
     }
 }

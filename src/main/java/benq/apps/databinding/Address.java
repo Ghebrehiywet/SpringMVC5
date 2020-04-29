@@ -8,11 +8,6 @@ public class Address {
     public Address() {
     }
 
-    public Address(String street, String zipCode) {
-        this.street = street;
-        this.zipCode = zipCode;
-    }
-
     public String getStreet() {
         return street;
     }
